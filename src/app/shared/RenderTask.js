@@ -1,7 +1,7 @@
 import React from "react";
 import Task from "./Task";
 
-function TaskList(props) {
+function RenderTask(props) {
   const { tasks, onComplete } = props;
 
   return (
@@ -13,4 +13,4 @@ function TaskList(props) {
   );
 }
 
-export default TaskList;
+export default RenderTask;
