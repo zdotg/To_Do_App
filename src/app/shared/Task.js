@@ -1,6 +1,6 @@
 import React from "react";
 
-function task(props) {
+function Task(props) {
   const { task, onComplete } = props;
 
   return (
