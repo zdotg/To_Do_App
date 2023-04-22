@@ -1,18 +1,11 @@
 import React from "react";
 
-function DeleteTask(props) {
-  const { tasks, onDelete } = props;
+function DeleteTask({ id, onDelete }) {
+  const handleDeleteClick = () => {
+    onDelete(id);
+  };
 
-  return (
-    <ul className="task-list">
-      {tasks.map((task) => (
-        <li key={task.id}>
-          <span>{task.description}</span>
-          <button onClick={() => onDelete(task.id)}>Delete</button>
-        </li>
-      ))}
-    </ul>
-  );
+  return <button onClick={handleDeleteClick}>Delete</button>;
 }
 
 export default DeleteTask;

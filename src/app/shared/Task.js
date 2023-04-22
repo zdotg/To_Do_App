@@ -17,4 +17,4 @@ function Task(props) {
   );
 }
 
-export default task;
+export default Task;
