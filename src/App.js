@@ -1,13 +1,19 @@
-import React from "react";
+import React, { useState } from "react";
 import "./App.css";
+import TaskList from "./app/shared/TaskList";
+import Header from "./app/shared/Header";
 
 function App() {
+  const [tasks, setTasks] = useState([]);
+
+  const handleAddTask = (newTask) => {
+    setTasks([...tasks, { id: tasks.length + 1, ...newTask }]);
+    console.log(newTask);
+  };
   return (
-    <div classname="App">
-      <header className="App-header">
-        <h1>Zach's To-Do App</h1>
-      </header>
-      <main>{/* child components to go here */}</main>
+    <div className="container">
+      <Header />
+      <TaskList tasks={tasks} onAddTask={handleAddTask} setTasks={setTasks} />
     </div>
   );
 }
