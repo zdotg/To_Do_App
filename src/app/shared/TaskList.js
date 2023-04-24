@@ -21,11 +21,7 @@ function TaskList({ tasks, onAddTask, setTasks }) {
       <ul>
         {tasks.map((task) => (
           <li key={task.id}>
-            <Task
-              description={task.description}
-              completed={task.completed}
-              onComplete={() => handleCompleteTask(task.id)}
-            />
+            <Task task={task} onComplete={() => handleCompleteTask(task.id)} />
             <DeleteTask id={task.id} onDelete={handleDeleteTask} />
           </li>
         ))}

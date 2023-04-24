@@ -7,9 +7,15 @@ function App() {
   const [tasks, setTasks] = useState([]);
 
   const handleAddTask = (newTask) => {
-    setTasks([...tasks, { id: tasks.length + 1, ...newTask }]);
+    const taskWithDefaults = {
+      ...newTask,
+      id: tasks.length + 1,
+      completed: false,
+    };
+    setTasks([...tasks, taskWithDefaults]);
     console.log(newTask);
   };
+
   return (
     <div className="container">
       <Header />

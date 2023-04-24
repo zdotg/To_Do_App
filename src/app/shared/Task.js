@@ -1,16 +1,22 @@
 import React from "react";
 
 function Task(props) {
-  const { description, completed, onComplete } = props;
+  const { task, onComplete } = props;
 
-  if (!completed) {
+  if (!task) {
     return null;
   }
 
   return (
     <div className="task">
-      <input type="checkbox" checked={completed} onChange={onComplete} />
-      <span className={completed ? "completed" : ""}>{description}</span>
+      <input
+        type="checkbox"
+        checked={task.completed}
+        onChange={() => onComplete(task.id)}
+      />
+      <span className={task.completed ? "completed" : ""}>
+        {task.description}
+      </span>
     </div>
   );
 }
